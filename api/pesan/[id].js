@@ -10,9 +10,8 @@ export default async function handler(req, res) {
         return res.status(401).json({ message: 'Akses ditolak.' })
     }
 
-    await connectDB()
-
     try {
+        await connectDB()
         const { id } = req.query
         const dihapus = await Pesan.findByIdAndDelete(id)
         if (!dihapus) {
@@ -20,6 +19,6 @@ export default async function handler(req, res) {
         }
         return res.status(200).json({ message: 'Pesan berhasil dihapus.' })
     } catch (error) {
-        return res.status(500).json({ message: 'Gagal menghapus pesan.' })
+        return res.status(500).json({ message: error.message || 'Gagal menghapus pesan.' })
     }
 }
