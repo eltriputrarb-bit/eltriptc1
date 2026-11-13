@@ -3,11 +3,14 @@ export default function handler(req, res) {
         return res.status(405).json({ message: 'Method tidak diizinkan' })
     }
 
-    const { password } = req.body || {}
-    const adminPass = process.env.ADMIN_PASSWORD
+    const body = typeof req.body === 'string' ? JSON.parse(req.body) : req.body
+    const { password } = body || {}
+    const adminPass = (process.env.ADMIN_PASSWORD || '')
+        .trim()
+        .replace(/^["']|["']$/g, '')
 
     if (!adminPass) {
-        return res.status(500).json({ message: 'ADMIN_PASSWORD belum diatur di server.' })
+        return res.status(500).json({ message: 'ADMIN_PASSWORD belum diatur di Vercel.' })
     }
 
     if (password === adminPass) {
