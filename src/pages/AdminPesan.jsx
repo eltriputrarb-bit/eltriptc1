@@ -1,7 +1,19 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
+
+const BATAS_TIDAK_AKTIF_MS = 30 * 60 * 1000 // 30 menit
 
 function AdminPesan() {
-    const [token, setToken] = useState(localStorage.getItem('admin_token') || '')
+    const [token, setToken] = useState(() => {
+        const savedToken = localStorage.getItem('admin_token')
+        const lastActive = Number(localStorage.getItem('admin_last_active') || 0)
+        if (savedToken && lastActive && Date.now() - lastActive > BATAS_TIDAK_AKTIF_MS) {
+            localStorage.removeItem('admin_token')
+            localStorage.removeItem('admin_last_active')
+            return ''
+        }
+        return savedToken || ''
+    })
+
     const [password, setPassword] = useState('')
     const [errorLogin, setErrorLogin] = useState('')
 
@@ -9,34 +21,70 @@ function AdminPesan() {
     const [loading, setLoading] = useState(false)
     const [hapusId, setHapusId] = useState(null)
 
-    const ambilPesan = async (adminToken) => {
-        setLoading(true)
-        try {
-            const response = await fetch('/api/pesan', {
-                headers: {
-                    Authorization: `Bearer ${adminToken}`,
-                },
-            })
+    const timerRef = useRef(null)
 
-            if (response.status === 401) {
-                handleLogout()
-                return
+    const handleLogout = useCallback((pesanInfo = '') => {
+        localStorage.removeItem('admin_token')
+        localStorage.removeItem('admin_last_active')
+        if (timerRef.current) clearTimeout(timerRef.current)
+        setToken('')
+        setDaftarPesan([])
+        if (pesanInfo) setErrorLogin(pesanInfo)
+    }, [])
+
+    const ambilPesan = useCallback(
+        async (adminToken) => {
+            setLoading(true)
+            try {
+                const response = await fetch('/api/pesan', {
+                    headers: {
+                        Authorization: `Bearer ${adminToken}`,
+                    },
+                })
+
+                if (response.status === 401) {
+                    handleLogout('Sesi tidak valid. Silakan login kembali.')
+                    return
+                }
+
+                const data = await response.json()
+                setDaftarPesan(data)
+            } catch (error) {
+                console.error('Gagal mengambil pesan:', error)
+            } finally {
+                setLoading(false)
             }
-
-            const data = await response.json()
-            setDaftarPesan(data)
-        } catch (error) {
-            console.error('Gagal mengambil pesan:', error)
-        } finally {
-            setLoading(false)
-        }
-    }
+        },
+        [handleLogout]
+    )
 
     useEffect(() => {
         if (token) {
             ambilPesan(token)
         }
-    }, [token])
+    }, [token, ambilPesan])
+
+    // Pemantau aktivitas untuk auto-logout 30 menit
+    useEffect(() => {
+        if (!token) return
+
+        const resetTimer = () => {
+            localStorage.setItem('admin_last_active', String(Date.now()))
+            if (timerRef.current) clearTimeout(timerRef.current)
+            timerRef.current = setTimeout(() => {
+                handleLogout('Sesi berakhir otomatis karena 30 menit tidak aktif.')
+            }, BATAS_TIDAK_AKTIF_MS)
+        }
+
+        const events = ['mousemove', 'mousedown', 'keydown', 'scroll', 'touchstart', 'click']
+        resetTimer()
+        events.forEach((ev) => window.addEventListener(ev, resetTimer, { passive: true }))
+
+        return () => {
+            if (timerRef.current) clearTimeout(timerRef.current)
+            events.forEach((ev) => window.removeEventListener(ev, resetTimer))
+        }
+    }, [token, handleLogout])
 
     const handleLogin = async (e) => {
         e.preventDefault()
@@ -57,17 +105,12 @@ function AdminPesan() {
             }
 
             localStorage.setItem('admin_token', result.token)
+            localStorage.setItem('admin_last_active', String(Date.now()))
             setToken(result.token)
             setPassword('')
         } catch (error) {
             setErrorLogin('Gagal terhubung ke server.')
         }
-    }
-
-    const handleLogout = () => {
-        localStorage.removeItem('admin_token')
-        setToken('')
-        setDaftarPesan([])
     }
 
     const handleHapus = async (id) => {
@@ -82,6 +125,11 @@ function AdminPesan() {
                     Authorization: `Bearer ${token}`,
                 },
             })
+
+            if (response.status === 401) {
+                handleLogout('Sesi berakhir. Silakan login kembali.')
+                return
+            }
 
             if (response.ok) {
                 setDaftarPesan((prev) => prev.filter((item) => item._id !== id))
@@ -160,7 +208,7 @@ function AdminPesan() {
                             PESAN MASUK ({daftarPesan.length})
                         </h1>
                         <p className="text-[11px] sm:text-xs text-[#071B2B]/70 mt-0.5">
-                            Daftar pesan dari formulir Hubungi Saya
+                            Daftar pesan dari formulir Hubungi Saya • Auto-logout 30 menit
                         </p>
                     </div>
 
@@ -172,7 +220,7 @@ function AdminPesan() {
                             Refresh
                         </button>
                         <button
-                            onClick={handleLogout}
+                            onClick={() => handleLogout()}
                             className="px-3 sm:px-4 py-1 sm:py-1.5 rounded-full bg-[#071B2B] hover:bg-[#FF5A22] text-white text-[11px] sm:text-xs font-semibold transition cursor-pointer"
                         >
                             Keluar
