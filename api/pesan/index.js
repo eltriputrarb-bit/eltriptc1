@@ -8,7 +8,6 @@ export default async function handler(req, res) {
 
         await connectDB()
 
-        // Kirim pesan baru (Publik)
         if (req.method === 'POST') {
             const body = typeof req.body === 'string' ? JSON.parse(req.body) : req.body
             const { nama, email, pesan } = body || {}
@@ -24,10 +23,10 @@ export default async function handler(req, res) {
             })
         }
 
-        // Ambil daftar pesan (Khusus Admin)
         if (req.method === 'GET') {
             const auth = req.headers.authorization
-            if (auth !== `Bearer ${process.env.ADMIN_PASSWORD}`) {
+            const cleanAdminPass = (process.env.ADMIN_PASSWORD || '').trim()
+            if (auth !== `Bearer ${cleanAdminPass}`) {
                 return res.status(401).json({ message: 'Akses ditolak.' })
             }
 
@@ -37,9 +36,15 @@ export default async function handler(req, res) {
 
         return res.status(405).json({ message: 'Method tidak diizinkan' })
     } catch (error) {
-        console.error('API Pesan Error:', error)
+        let infoUri = ''
+        try {
+            const cleanUri = (process.env.MONGODB_URI || '').trim().replace(/^["']|["']$/g, '')
+            const parsed = new URL(cleanUri)
+            infoUri = ` (User: ${parsed.username} | Panjang Pass: ${parsed.password.length} | Host: ${parsed.hostname})`
+        } catch (_) { }
+
         return res.status(500).json({
-            message: error.message || 'Terjadi kesalahan koneksi database.',
+            message: `${error.message}${infoUri}`,
         })
     }
 }

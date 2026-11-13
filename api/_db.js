@@ -8,13 +8,23 @@ if (!cached) {
 export async function connectDB() {
     if (cached.conn) return cached.conn
 
+    const cleanUri = (process.env.MONGODB_URI || '')
+        .trim()
+        .replace(/^["']|["']$/g, '')
+
     if (!cached.promise) {
         cached.promise = mongoose
-            .connect(process.env.MONGODB_URI, { bufferCommands: false })
+            .connect(cleanUri, { bufferCommands: false })
             .then((m) => m)
     }
 
-    cached.conn = await cached.promise
+    try {
+        cached.conn = await cached.promise
+    } catch (err) {
+        cached.promise = null
+        throw err
+    }
+
     return cached.conn
 }
 
