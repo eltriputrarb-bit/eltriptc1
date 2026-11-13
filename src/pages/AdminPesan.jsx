@@ -107,18 +107,18 @@ function AdminPesan() {
     // TAMPILAN LOGIN JIKA BELUM MASUK
     if (!token) {
         return (
-            <main className="flex-1 flex items-center justify-center px-4 py-12">
-                <div className="w-full max-w-sm bg-[#F3F6F4] text-[#071B2B] rounded-2xl p-6 sm:p-8 shadow-lg border border-[#071B2B]/15">
-                    <h1 className="text-lg sm:text-xl font-bold text-center">
+            <main className="flex-1 flex items-center justify-center px-3 sm:px-4 py-8 sm:py-12">
+                <div className="w-full max-w-xs sm:max-w-sm bg-[#F3F6F4] text-[#071B2B] rounded-2xl p-5 sm:p-8 shadow-lg border border-[#071B2B]/15">
+                    <h1 className="text-base sm:text-xl font-bold text-center">
                         Login Admin Pesan
                     </h1>
-                    <p className="text-xs text-[#071B2B]/75 text-center mt-1">
+                    <p className="text-[11px] sm:text-xs text-[#071B2B]/75 text-center mt-1">
                         Masukkan password admin untuk melihat pesan masuk.
                     </p>
 
-                    <form onSubmit={handleLogin} className="mt-6 space-y-4">
+                    <form onSubmit={handleLogin} className="mt-4 sm:mt-6 space-y-3 sm:space-y-4">
                         <div>
-                            <label className="block text-xs font-semibold mb-1.5">
+                            <label className="block text-[11px] sm:text-xs font-semibold mb-1">
                                 Password Admin
                             </label>
                             <input
@@ -127,19 +127,19 @@ function AdminPesan() {
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                                 placeholder="Masukkan password..."
-                                className="w-full px-4 py-2 rounded-full bg-white border border-[#071B2B]/30 text-xs sm:text-sm focus:outline-none focus:border-[#FF5A22]"
+                                className="w-full px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white border border-[#071B2B]/30 text-[11px] sm:text-xs md:text-sm focus:outline-none focus:border-[#FF5A22]"
                             />
                         </div>
 
                         {errorLogin && (
-                            <p className="text-xs text-red-600 font-medium text-center">
+                            <p className="text-[11px] sm:text-xs text-red-600 font-medium text-center">
                                 {errorLogin}
                             </p>
                         )}
 
                         <button
                             type="submit"
-                            className="w-full py-2 px-5 rounded-full bg-[#071B2B] hover:bg-[#FF5A22] text-white font-semibold text-xs sm:text-sm transition cursor-pointer"
+                            className="w-full py-1.5 sm:py-2 px-4 sm:px-5 rounded-full bg-[#071B2B] hover:bg-[#FF5A22] text-white font-semibold text-[11px] sm:text-xs md:text-sm transition cursor-pointer"
                         >
                             Masuk
                         </button>
@@ -151,29 +151,29 @@ function AdminPesan() {
 
     // TAMPILAN DAFTAR PESAN MASUK
     return (
-        <main className="flex-1 flex flex-col items-center px-4 sm:px-8 py-8">
-            <section className="w-full max-w-5xl bg-[#F3F6F4] text-[#071B2B] rounded-2xl p-6 sm:p-8 md:p-10 shadow-lg border border-[#071B2B]/15">
+        <main className="flex-1 flex flex-col items-center px-3 sm:px-6 md:px-8 py-5 sm:py-8">
+            <section className="w-full max-w-5xl bg-[#F3F6F4] text-[#071B2B] rounded-2xl p-4 sm:p-7 md:p-9 shadow-lg border border-[#071B2B]/15">
                 {/* Header Dashboard */}
-                <div className="border-b border-[#071B2B]/25 pb-4 mb-6 flex flex-wrap items-center justify-between gap-3">
+                <div className="border-b border-[#071B2B]/25 pb-3 sm:pb-4 mb-4 sm:mb-6 flex flex-wrap items-center justify-between gap-2.5">
                     <div>
-                        <h1 className="text-base sm:text-lg font-bold uppercase tracking-wide">
+                        <h1 className="text-sm sm:text-base md:text-lg font-bold uppercase tracking-wide">
                             PESAN MASUK ({daftarPesan.length})
                         </h1>
-                        <p className="text-xs text-[#071B2B]/70 mt-0.5">
+                        <p className="text-[11px] sm:text-xs text-[#071B2B]/70 mt-0.5">
                             Daftar pesan dari formulir Hubungi Saya
                         </p>
                     </div>
 
-                    <div className="flex items-center gap-2.5">
+                    <div className="flex items-center gap-2">
                         <button
                             onClick={() => ambilPesan(token)}
-                            className="px-4 py-1.5 rounded-full border border-[#071B2B] text-xs font-semibold hover:bg-[#071B2B] hover:text-white transition cursor-pointer"
+                            className="px-3 sm:px-4 py-1 sm:py-1.5 rounded-full border border-[#071B2B] text-[11px] sm:text-xs font-semibold hover:bg-[#071B2B] hover:text-white transition cursor-pointer"
                         >
                             Refresh
                         </button>
                         <button
                             onClick={handleLogout}
-                            className="px-4 py-1.5 rounded-full bg-[#071B2B] hover:bg-[#FF5A22] text-white text-xs font-semibold transition cursor-pointer"
+                            className="px-3 sm:px-4 py-1 sm:py-1.5 rounded-full bg-[#071B2B] hover:bg-[#FF5A22] text-white text-[11px] sm:text-xs font-semibold transition cursor-pointer"
                         >
                             Keluar
                         </button>
@@ -182,36 +182,36 @@ function AdminPesan() {
 
                 {/* Konten Pesan */}
                 {loading ? (
-                    <p className="text-xs sm:text-sm text-center py-10 text-[#071B2B]/70">
+                    <p className="text-[11px] sm:text-xs md:text-sm text-center py-8 sm:py-10 text-[#071B2B]/70">
                         Memuat pesan dari server...
                     </p>
                 ) : daftarPesan.length === 0 ? (
-                    <div className="text-center py-12 bg-white/60 rounded-2xl border border-[#071B2B]/20">
-                        <p className="text-xs sm:text-sm font-medium text-[#071B2B]/70">
+                    <div className="text-center py-8 sm:py-12 bg-white/60 rounded-xl sm:rounded-2xl border border-[#071B2B]/20">
+                        <p className="text-[11px] sm:text-xs md:text-sm font-medium text-[#071B2B]/70">
                             Belum ada pesan masuk.
                         </p>
                     </div>
                 ) : (
-                    <div className="space-y-4">
+                    <div className="space-y-3 sm:space-y-4">
                         {daftarPesan.map((item) => (
                             <article
                                 key={item._id}
-                                className="bg-white/90 border border-[#071B2B]/30 rounded-2xl p-4 sm:p-5 flex flex-col sm:flex-row sm:items-start justify-between gap-4 shadow-sm"
+                                className="bg-white/90 border border-[#071B2B]/30 rounded-xl sm:rounded-2xl p-3.5 sm:p-5 flex flex-col sm:flex-row sm:items-start justify-between gap-3 sm:gap-4 shadow-sm"
                             >
-                                <div className="space-y-1.5 flex-1">
-                                    <div className="flex flex-wrap items-center gap-2">
-                                        <h2 className="text-sm sm:text-base font-bold text-[#071B2B]">
+                                <div className="space-y-1 flex-1 min-w-0">
+                                    <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
+                                        <h2 className="text-xs sm:text-sm md:text-base font-bold text-[#071B2B]">
                                             {item.nama}
                                         </h2>
-                                        <span className="text-xs px-2.5 py-0.5 rounded-full bg-[#071B2B]/10 text-[#071B2B] font-medium">
+                                        <span className="text-[10px] sm:text-xs px-2 py-0.5 rounded-full bg-[#071B2B]/10 text-[#071B2B] font-medium break-all">
                                             {item.email}
                                         </span>
-                                        <span className="text-[11px] text-[#071B2B]/60">
+                                        <span className="text-[10px] sm:text-[11px] text-[#071B2B]/60">
                                             • {formatTanggal(item.createdAt)}
                                         </span>
                                     </div>
 
-                                    <p className="text-xs sm:text-sm text-[#071B2B]/85 leading-relaxed pt-1 whitespace-pre-line">
+                                    <p className="text-[11px] sm:text-xs md:text-sm text-[#071B2B]/85 leading-relaxed pt-1 whitespace-pre-line break-words">
                                         {item.pesan}
                                     </p>
                                 </div>
@@ -221,7 +221,7 @@ function AdminPesan() {
                                     <button
                                         onClick={() => handleHapus(item._id)}
                                         disabled={hapusId === item._id}
-                                        className="px-4 py-1.5 rounded-full border border-red-600 text-red-600 hover:bg-red-600 hover:text-white disabled:opacity-50 text-xs font-semibold transition cursor-pointer"
+                                        className="px-3 sm:px-4 py-1 sm:py-1.5 rounded-full border border-red-600 text-red-600 hover:bg-red-600 hover:text-white disabled:opacity-50 text-[11px] sm:text-xs font-semibold transition cursor-pointer"
                                     >
                                         {hapusId === item._id ? 'Menghapus...' : 'Hapus'}
                                     </button>

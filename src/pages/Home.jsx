@@ -153,14 +153,14 @@ function Home() {
     }
 
     return (
-        <main className="flex-1 flex flex-col items-center px-4 sm:px-8 py-8 space-y-10">
+        <main className="flex-1 flex flex-col items-center px-3 sm:px-6 md:px-8 py-5 sm:py-8 space-y-6 sm:space-y-9">
             {/* 1. HERO SECTION / PROFIL */}
             <section
                 id="profil"
-                className="scroll-mt-20 w-full max-w-5xl bg-[#F3F6F4] text-[#071B2B] rounded-2xl p-6 sm:p-9 md:p-11 shadow-lg border border-[#071B2B]/15 flex flex-col md:flex-row items-center gap-8 md:gap-12"
+                className="scroll-mt-16 w-full max-w-5xl bg-[#F3F6F4] text-[#071B2B] rounded-2xl p-4 sm:p-8 md:p-10 shadow-lg border border-[#071B2B]/15 flex flex-col md:flex-row items-center gap-5 sm:gap-8 md:gap-11"
             >
                 <div className="shrink-0">
-                    <div className="w-40 h-40 sm:w-48 sm:h-48 md:w-52 md:h-52 rounded-full border-2 border-[#071B2B]/60 bg-white/60 overflow-hidden shadow-inner">
+                    <div className="w-28 h-28 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-full border-2 border-[#071B2B]/60 bg-white/60 overflow-hidden shadow-inner">
                         <img
                             src={fotoProfil}
                             alt="Foto Profil Eltri Putra Rombebua"
@@ -170,30 +170,30 @@ function Home() {
                 </div>
 
                 <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left">
-                    <p className="text-xs sm:text-sm font-medium text-[#071B2B]/75">
+                    <p className="text-[11px] sm:text-xs md:text-sm font-medium text-[#071B2B]/75">
                         Halo, Perkenalkan saya
                     </p>
-                    <h1 className="text-2xl sm:text-3xl font-bold mt-0.5 text-[#071B2B]">
+                    <h1 className="text-lg sm:text-2xl md:text-3xl font-bold mt-0.5 text-[#071B2B]">
                         Eltri Putra Rombebua
                     </h1>
-                    <p className="text-xs sm:text-sm font-medium text-[#071B2B]/75 mt-0.5">
+                    <p className="text-[11px] sm:text-xs md:text-sm font-medium text-[#071B2B]/75 mt-0.5">
                         Web Developer / Siswa
                     </p>
 
-                    <p className="mt-4 text-xs sm:text-sm text-[#071B2B]/85 leading-relaxed max-w-lg">
+                    <p className="mt-3 sm:mt-4 text-[11px] sm:text-xs md:text-sm text-[#071B2B]/85 leading-relaxed max-w-lg">
                         [Deskripsikan diri kamu.... misalkan “halo saya Eltri, hobby
                         saya... sekolah dimana.... dan lain - lain]
                     </p>
 
-                    <div className="mt-6 w-full max-w-[220px]">
+                    <div className="mt-4 sm:mt-6 w-full max-w-[175px] sm:max-w-[210px]">
                         <a
                             href="#project"
-                            className="w-full bg-[#F3F6F4] hover:bg-[#071B2B] text-[#071B2B] hover:text-white border border-[#071B2B] rounded-full py-2 px-5 flex items-center justify-center gap-2 text-xs sm:text-sm font-semibold transition duration-200 shadow-sm"
+                            className="w-full bg-[#F3F6F4] hover:bg-[#071B2B] text-[#071B2B] hover:text-white border border-[#071B2B] rounded-full py-1.5 sm:py-2 px-4 sm:px-5 flex items-center justify-center gap-1.5 sm:gap-2 text-[11px] sm:text-xs md:text-sm font-semibold transition duration-200 shadow-sm"
                         >
                             <span>Lihat Project</span>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
-                                className="w-4 h-4"
+                                className="w-3.5 h-3.5 sm:w-4 sm:h-4"
                                 fill="none"
                                 viewBox="0 0 24 24"
                                 stroke="currentColor"
@@ -213,22 +213,22 @@ function Home() {
             {/* 2. SECTION PROJECT SAYA */}
             <section
                 id="project"
-                className="scroll-mt-20 w-full max-w-5xl bg-[#F3F6F4] text-[#071B2B] rounded-2xl p-6 sm:p-8 md:p-10 shadow-lg border border-[#071B2B]/15"
+                className="scroll-mt-16 w-full max-w-5xl bg-[#F3F6F4] text-[#071B2B] rounded-2xl p-4 sm:p-7 md:p-9 shadow-lg border border-[#071B2B]/15"
             >
-                <div className="border-b border-[#071B2B]/25 pb-3 mb-6">
-                    <h2 className="text-base sm:text-lg font-bold uppercase tracking-wide text-[#071B2B]">
+                <div className="border-b border-[#071B2B]/25 pb-2.5 sm:pb-3 mb-4 sm:mb-6">
+                    <h2 className="text-sm sm:text-base md:text-lg font-bold uppercase tracking-wide text-[#071B2B]">
                         PROJECT SAYA
                     </h2>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                     {daftarTampil.map((item, index) => (
                         <article
                             key={index}
-                            className="bg-[#F3F6F4] border border-[#071B2B]/35 rounded-2xl overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-md transition"
+                            className="bg-[#F3F6F4] border border-[#071B2B]/35 rounded-xl sm:rounded-2xl overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-md transition"
                         >
                             <div>
-                                <div className="w-full h-36 sm:h-44 border-b border-[#071B2B]/25 bg-white/60 flex items-center justify-center overflow-hidden">
+                                <div className="w-full h-32 sm:h-40 md:h-44 border-b border-[#071B2B]/25 bg-white/60 flex items-center justify-center overflow-hidden">
                                     {item.screenshot ? (
                                         <img
                                             src={item.screenshot}
@@ -236,28 +236,28 @@ function Home() {
                                             className="w-full h-full object-cover object-top"
                                         />
                                     ) : (
-                                        <span className="text-xs font-medium text-[#071B2B]/65">
+                                        <span className="text-[11px] sm:text-xs font-medium text-[#071B2B]/65">
                                             Screenshot website kamu
                                         </span>
                                     )}
                                 </div>
 
-                                <div className="p-4 sm:p-5 pb-3">
-                                    <h3 className="text-base sm:text-lg font-bold text-[#071B2B]">
+                                <div className="p-3.5 sm:p-5 pb-2.5 sm:pb-3">
+                                    <h3 className="text-sm sm:text-base md:text-lg font-bold text-[#071B2B]">
                                         {item.nama}
                                     </h3>
-                                    <p className="mt-1.5 text-xs sm:text-sm text-[#071B2B]/80 leading-relaxed">
+                                    <p className="mt-1 sm:mt-1.5 text-[11px] sm:text-xs md:text-sm text-[#071B2B]/80 leading-relaxed">
                                         {item.deskripsi}
                                     </p>
                                 </div>
                             </div>
 
-                            <div className="px-4 sm:px-5 pb-5 pt-2 flex justify-center">
+                            <div className="px-3.5 sm:px-5 pb-4 sm:pb-5 pt-1.5 flex justify-center">
                                 <a
                                     href={item.link}
                                     target="_blank"
                                     rel="noreferrer"
-                                    className="w-full max-w-[180px] text-center py-2 px-4 rounded-full bg-[#F3F6F4] hover:bg-[#071B2B] text-[#071B2B] hover:text-white border border-[#071B2B]/60 hover:border-[#071B2B] font-medium text-xs transition duration-200"
+                                    className="w-full max-w-[150px] sm:max-w-[180px] text-center py-1.5 sm:py-2 px-3 sm:px-4 rounded-full bg-[#F3F6F4] hover:bg-[#071B2B] text-[#071B2B] hover:text-white border border-[#071B2B]/60 hover:border-[#071B2B] font-medium text-[11px] sm:text-xs transition duration-200"
                                 >
                                     Lihat Website
                                 </a>
@@ -267,16 +267,16 @@ function Home() {
                 </div>
 
                 {/* Pagination (← 1 2 3 →) */}
-                <div className="mt-7 flex items-center justify-center gap-3 text-[#071B2B]">
+                <div className="mt-5 sm:mt-7 flex items-center justify-center gap-2 sm:gap-3 text-[#071B2B]">
                     <button
                         onClick={() => setHalamanAktif((prev) => Math.max(1, prev - 1))}
                         disabled={halamanAktif === 1}
                         aria-label="Halaman sebelumnya"
-                        className="p-1.5 rounded-full hover:bg-[#071B2B]/10 disabled:opacity-35 transition cursor-pointer disabled:cursor-not-allowed"
+                        className="p-1 sm:p-1.5 rounded-full hover:bg-[#071B2B]/10 disabled:opacity-35 transition cursor-pointer disabled:cursor-not-allowed"
                     >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            className="w-4 h-4"
+                            className="w-3.5 h-3.5 sm:w-4 sm:h-4"
                             fill="none"
                             viewBox="0 0 24 24"
                             stroke="currentColor"
@@ -294,7 +294,7 @@ function Home() {
                         <button
                             key={nomor}
                             onClick={() => setHalamanAktif(nomor)}
-                            className={`w-8 h-8 rounded-full border font-semibold text-xs flex items-center justify-center transition cursor-pointer ${halamanAktif === nomor
+                            className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full border font-semibold text-[11px] sm:text-xs flex items-center justify-center transition cursor-pointer ${halamanAktif === nomor
                                     ? 'bg-[#071B2B] text-white border-[#071B2B]'
                                     : 'bg-[#F3F6F4] text-[#071B2B] border-[#071B2B]/45 hover:border-[#071B2B]'
                                 }`}
@@ -309,11 +309,11 @@ function Home() {
                         }
                         disabled={halamanAktif === totalHalaman.length}
                         aria-label="Halaman berikutnya"
-                        className="p-1.5 rounded-full hover:bg-[#071B2B]/10 disabled:opacity-35 transition cursor-pointer disabled:cursor-not-allowed"
+                        className="p-1 sm:p-1.5 rounded-full hover:bg-[#071B2B]/10 disabled:opacity-35 transition cursor-pointer disabled:cursor-not-allowed"
                     >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            className="w-4 h-4"
+                            className="w-3.5 h-3.5 sm:w-4 sm:h-4"
                             fill="none"
                             viewBox="0 0 24 24"
                             stroke="currentColor"
@@ -332,26 +332,26 @@ function Home() {
             {/* 3. SECTION RIWAYAT PENDIDIKAN / KURSUS */}
             <section
                 id="pendidikan"
-                className="scroll-mt-20 w-full max-w-5xl bg-[#F3F6F4] text-[#071B2B] rounded-2xl p-6 sm:p-8 md:p-10 shadow-lg border border-[#071B2B]/15"
+                className="scroll-mt-16 w-full max-w-5xl bg-[#F3F6F4] text-[#071B2B] rounded-2xl p-4 sm:p-7 md:p-9 shadow-lg border border-[#071B2B]/15"
             >
-                <div className="border-b border-[#071B2B]/25 pb-3 mb-6">
-                    <h2 className="text-base sm:text-lg font-bold text-[#071B2B]">
+                <div className="border-b border-[#071B2B]/25 pb-2.5 sm:pb-3 mb-4 sm:mb-6">
+                    <h2 className="text-sm sm:text-base md:text-lg font-bold text-[#071B2B]">
                         Riwayat Pendidikan / Kursus
                     </h2>
                 </div>
 
                 {/* Container Timeline */}
-                <div className="relative pl-12 sm:pl-16 space-y-5">
+                <div className="relative pl-10 sm:pl-14 md:pl-16 space-y-3.5 sm:space-y-5">
                     {/* Garis Vertikal Timeline */}
                     <div
                         aria-hidden="true"
-                        className="absolute left-4 sm:left-5 top-3 bottom-3 w-[2px] bg-[#071B2B]/45"
+                        className="absolute left-3.5 sm:left-4 md:left-5 top-3 bottom-3 w-[2px] bg-[#071B2B]/45"
                     />
 
                     {riwayatPendidikan.map((item, index) => (
                         <div key={index} className="relative flex items-center">
                             {/* Lingkaran Penanda + Logo Sekolah */}
-                            <div className="absolute -left-12 sm:-left-16 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white border-2 border-[#071B2B]/60 overflow-hidden flex items-center justify-center shadow-sm">
+                            <div className="absolute -left-10 sm:-left-14 md:-left-16 w-8 h-8 sm:w-10 sm:h-10 md:w-11 md:h-11 rounded-full bg-white border-2 border-[#071B2B]/60 overflow-hidden flex items-center justify-center shadow-sm">
                                 {item.logo ? (
                                     <img
                                         src={item.logo}
@@ -359,23 +359,23 @@ function Home() {
                                         className="w-full h-full object-cover"
                                     />
                                 ) : (
-                                    <span className="w-2.5 h-2.5 rounded-full bg-[#FF5A22]" />
+                                    <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#FF5A22]" />
                                 )}
                             </div>
 
                             {/* Kartu Memanjang */}
-                            <article className="w-full bg-[#F3F6F4] border border-[#071B2B]/35 rounded-2xl px-5 sm:px-7 py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2 shadow-sm hover:border-[#071B2B] transition">
+                            <article className="w-full bg-[#F3F6F4] border border-[#071B2B]/35 rounded-xl sm:rounded-2xl px-3.5 sm:px-6 md:px-7 py-3 sm:py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 sm:gap-2 shadow-sm hover:border-[#071B2B] transition">
                                 <div>
-                                    <h3 className="text-sm sm:text-base font-semibold text-[#071B2B]">
+                                    <h3 className="text-xs sm:text-sm md:text-base font-semibold text-[#071B2B]">
                                         {item.nama}
                                     </h3>
-                                    <p className="text-xs sm:text-sm text-[#071B2B]/75 mt-0.5">
+                                    <p className="text-[11px] sm:text-xs md:text-sm text-[#071B2B]/75 mt-0.5">
                                         {item.tahun}
                                     </p>
                                 </div>
 
                                 <div className="sm:text-right shrink-0">
-                                    <span className="text-xs sm:text-sm font-semibold text-[#071B2B]">
+                                    <span className="text-[11px] sm:text-xs md:text-sm font-semibold text-[#071B2B]">
                                         {item.status}
                                     </span>
                                 </div>
@@ -388,33 +388,33 @@ function Home() {
             {/* 4. SECTION HUBUNGI SAYA */}
             <section
                 id="hubungi"
-                className="scroll-mt-20 w-full max-w-5xl bg-[#F3F6F4] text-[#071B2B] rounded-2xl p-6 sm:p-8 md:p-10 shadow-lg border border-[#071B2B]/15"
+                className="scroll-mt-16 w-full max-w-5xl bg-[#F3F6F4] text-[#071B2B] rounded-2xl p-4 sm:p-7 md:p-9 shadow-lg border border-[#071B2B]/15"
             >
-                <div className="border-b border-[#071B2B]/25 pb-3 mb-6">
-                    <h2 className="text-base sm:text-lg font-bold text-[#071B2B]">
+                <div className="border-b border-[#071B2B]/25 pb-2.5 sm:pb-3 mb-4 sm:mb-6">
+                    <h2 className="text-sm sm:text-base md:text-lg font-bold text-[#071B2B]">
                         Hubungi Saya
                     </h2>
                 </div>
 
                 {/* Kartu Email & Alamat */}
-                <div className="space-y-3">
-                    <div className="w-full bg-white/80 border border-[#071B2B]/30 rounded-full px-4 sm:px-6 py-2.5 flex items-center gap-3.5 shadow-sm">
-                        <div className="w-9 h-9 rounded-full bg-[#071B2B] text-[#FF5A22] font-bold flex items-center justify-center shrink-0 text-xs">
+                <div className="space-y-2.5 sm:space-y-3">
+                    <div className="w-full bg-white/80 border border-[#071B2B]/30 rounded-full px-3.5 sm:px-5 py-2 sm:py-2.5 flex items-center gap-3 shadow-sm">
+                        <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#071B2B] text-[#FF5A22] font-bold flex items-center justify-center shrink-0 text-[11px] sm:text-xs">
                             @
                         </div>
-                        <div>
-                            <p className="text-xs font-bold text-[#071B2B]">Email</p>
-                            <p className="text-xs sm:text-sm text-[#071B2B]/80">
+                        <div className="min-w-0">
+                            <p className="text-[11px] sm:text-xs font-bold text-[#071B2B]">Email</p>
+                            <p className="text-[11px] sm:text-xs md:text-sm text-[#071B2B]/80 truncate">
                                 eltriputrarb@gmail.com
                             </p>
                         </div>
                     </div>
 
-                    <div className="w-full bg-white/80 border border-[#071B2B]/30 rounded-full px-4 sm:px-6 py-2.5 flex items-center gap-3.5 shadow-sm">
-                        <div className="w-9 h-9 rounded-full bg-[#071B2B] text-[#FF5A22] flex items-center justify-center shrink-0">
+                    <div className="w-full bg-white/80 border border-[#071B2B]/30 rounded-full px-3.5 sm:px-5 py-2 sm:py-2.5 flex items-center gap-3 shadow-sm">
+                        <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#071B2B] text-[#FF5A22] flex items-center justify-center shrink-0">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
-                                className="w-4 h-4"
+                                className="w-3.5 h-3.5 sm:w-4 sm:h-4"
                                 viewBox="0 0 24 24"
                                 fill="none"
                                 stroke="currentColor"
@@ -426,9 +426,11 @@ function Home() {
                                 <circle cx="12" cy="10" r="3" />
                             </svg>
                         </div>
-                        <div>
-                            <p className="text-xs font-bold text-[#071B2B]">Alamat / lokasi</p>
-                            <p className="text-xs sm:text-sm text-[#071B2B]/80">
+                        <div className="min-w-0">
+                            <p className="text-[11px] sm:text-xs font-bold text-[#071B2B]">
+                                Alamat / lokasi
+                            </p>
+                            <p className="text-[11px] sm:text-xs md:text-sm text-[#071B2B]/80 truncate">
                                 Kota Makassar, Indonesia
                             </p>
                         </div>
@@ -436,23 +438,23 @@ function Home() {
                 </div>
 
                 {/* Media Sosial & Tautan */}
-                <div className="mt-6">
-                    <p className="text-xs sm:text-sm font-semibold text-[#071B2B] mb-2.5">
+                <div className="mt-5 sm:mt-6">
+                    <p className="text-[11px] sm:text-xs md:text-sm font-semibold text-[#071B2B] mb-2">
                         Media Sosial &amp; Tautan :
                     </p>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3.5">
                         {/* 1. Instagram */}
                         <a
                             href="https://www.instagram.com/ptcindonesia.info/"
                             target="_blank"
                             rel="noreferrer"
-                            className="group bg-white/90 hover:bg-[#071B2B] text-[#071B2B] hover:text-white border border-[#071B2B]/30 hover:border-[#071B2B] rounded-2xl px-4 py-3 flex items-center gap-3.5 transition duration-200 shadow-sm"
+                            className="group bg-white/90 hover:bg-[#071B2B] text-[#071B2B] hover:text-white border border-[#071B2B]/30 hover:border-[#071B2B] rounded-xl sm:rounded-2xl px-3 sm:px-4 py-2 sm:py-3 flex items-center gap-2.5 sm:gap-3.5 transition duration-200 shadow-sm"
                         >
-                            <div className="w-10 h-10 rounded-xl bg-[#071B2B] group-hover:bg-[#FF5A22] text-white flex items-center justify-center shrink-0 transition">
+                            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-[#071B2B] group-hover:bg-[#FF5A22] text-white flex items-center justify-center shrink-0 transition">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
-                                    className="w-5 h-5"
+                                    className="w-4 h-4 sm:w-5 sm:h-5"
                                     viewBox="0 0 24 24"
                                     fill="none"
                                     stroke="currentColor"
@@ -465,9 +467,11 @@ function Home() {
                                     <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
                                 </svg>
                             </div>
-                            <div className="text-left overflow-hidden">
-                                <p className="text-[11px] font-medium opacity-70">Instagram</p>
-                                <p className="text-xs sm:text-sm font-bold truncate">
+                            <div className="text-left min-w-0">
+                                <p className="text-[10px] sm:text-[11px] font-medium opacity-70">
+                                    Instagram
+                                </p>
+                                <p className="text-[11px] sm:text-xs md:text-sm font-bold truncate">
                                     @ptcindonesia.info
                                 </p>
                             </div>
@@ -478,12 +482,12 @@ function Home() {
                             href="https://www.facebook.com/share/1FfmijoyqH/"
                             target="_blank"
                             rel="noreferrer"
-                            className="group bg-white/90 hover:bg-[#071B2B] text-[#071B2B] hover:text-white border border-[#071B2B]/30 hover:border-[#071B2B] rounded-2xl px-4 py-3 flex items-center gap-3.5 transition duration-200 shadow-sm"
+                            className="group bg-white/90 hover:bg-[#071B2B] text-[#071B2B] hover:text-white border border-[#071B2B]/30 hover:border-[#071B2B] rounded-xl sm:rounded-2xl px-3 sm:px-4 py-2 sm:py-3 flex items-center gap-2.5 sm:gap-3.5 transition duration-200 shadow-sm"
                         >
-                            <div className="w-10 h-10 rounded-xl bg-[#071B2B] group-hover:bg-[#FF5A22] text-white flex items-center justify-center shrink-0 transition">
+                            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-[#071B2B] group-hover:bg-[#FF5A22] text-white flex items-center justify-center shrink-0 transition">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
-                                    className="w-5 h-5"
+                                    className="w-4 h-4 sm:w-5 sm:h-5"
                                     viewBox="0 0 24 24"
                                     fill="none"
                                     stroke="currentColor"
@@ -494,9 +498,11 @@ function Home() {
                                     <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
                                 </svg>
                             </div>
-                            <div className="text-left overflow-hidden">
-                                <p className="text-[11px] font-medium opacity-70">Facebook</p>
-                                <p className="text-xs sm:text-sm font-bold truncate">
+                            <div className="text-left min-w-0">
+                                <p className="text-[10px] sm:text-[11px] font-medium opacity-70">
+                                    Facebook
+                                </p>
+                                <p className="text-[11px] sm:text-xs md:text-sm font-bold truncate">
                                     PTC Indonesia
                                 </p>
                             </div>
@@ -507,12 +513,12 @@ function Home() {
                             href="https://github.com/eltriputrarb-bit"
                             target="_blank"
                             rel="noreferrer"
-                            className="group bg-white/90 hover:bg-[#071B2B] text-[#071B2B] hover:text-white border border-[#071B2B]/30 hover:border-[#071B2B] rounded-2xl px-4 py-3 flex items-center gap-3.5 transition duration-200 shadow-sm"
+                            className="group bg-white/90 hover:bg-[#071B2B] text-[#071B2B] hover:text-white border border-[#071B2B]/30 hover:border-[#071B2B] rounded-xl sm:rounded-2xl px-3 sm:px-4 py-2 sm:py-3 flex items-center gap-2.5 sm:gap-3.5 transition duration-200 shadow-sm"
                         >
-                            <div className="w-10 h-10 rounded-xl bg-[#071B2B] group-hover:bg-[#FF5A22] text-white flex items-center justify-center shrink-0 transition">
+                            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-[#071B2B] group-hover:bg-[#FF5A22] text-white flex items-center justify-center shrink-0 transition">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
-                                    className="w-5 h-5"
+                                    className="w-4 h-4 sm:w-5 sm:h-5"
                                     viewBox="0 0 24 24"
                                     fill="none"
                                     stroke="currentColor"
@@ -524,9 +530,11 @@ function Home() {
                                     <path d="M9 18c-4.51 2-5-2-7-2" />
                                 </svg>
                             </div>
-                            <div className="text-left overflow-hidden">
-                                <p className="text-[11px] font-medium opacity-70">GitHub</p>
-                                <p className="text-xs sm:text-sm font-bold truncate">
+                            <div className="text-left min-w-0">
+                                <p className="text-[10px] sm:text-[11px] font-medium opacity-70">
+                                    GitHub
+                                </p>
+                                <p className="text-[11px] sm:text-xs md:text-sm font-bold truncate">
                                     @eltriputrarb-bit
                                 </p>
                             </div>
@@ -537,10 +545,10 @@ function Home() {
                 {/* Form Kirim Pesan */}
                 <form
                     onSubmit={handleSubmit}
-                    className="mt-6 bg-[#F3F6F4] border border-[#071B2B]/35 rounded-2xl p-5 sm:p-7 space-y-4 shadow-sm"
+                    className="mt-5 sm:mt-6 bg-[#F3F6F4] border border-[#071B2B]/35 rounded-xl sm:rounded-2xl p-3.5 sm:p-6 md:p-7 space-y-3 sm:space-y-4 shadow-sm"
                 >
                     <div>
-                        <label className="block text-xs font-semibold text-[#071B2B] mb-1.5">
+                        <label className="block text-[11px] sm:text-xs font-semibold text-[#071B2B] mb-1">
                             Nama Lengkap
                         </label>
                         <input
@@ -551,12 +559,12 @@ function Home() {
                                 setFormData({ ...formData, nama: e.target.value })
                             }
                             placeholder="Masukkan Nama Anda"
-                            className="w-full px-4 py-2 rounded-full bg-white border border-[#071B2B]/30 text-xs sm:text-sm text-[#071B2B] placeholder:text-[#071B2B]/45 focus:outline-none focus:border-[#FF5A22] transition"
+                            className="w-full px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white border border-[#071B2B]/30 text-[11px] sm:text-xs md:text-sm text-[#071B2B] placeholder:text-[#071B2B]/45 focus:outline-none focus:border-[#FF5A22] transition"
                         />
                     </div>
 
                     <div>
-                        <label className="block text-xs font-semibold text-[#071B2B] mb-1.5">
+                        <label className="block text-[11px] sm:text-xs font-semibold text-[#071B2B] mb-1">
                             Email
                         </label>
                         <input
@@ -567,12 +575,12 @@ function Home() {
                                 setFormData({ ...formData, email: e.target.value })
                             }
                             placeholder="Masukkan Email Anda"
-                            className="w-full px-4 py-2 rounded-full bg-white border border-[#071B2B]/30 text-xs sm:text-sm text-[#071B2B] placeholder:text-[#071B2B]/45 focus:outline-none focus:border-[#FF5A22] transition"
+                            className="w-full px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white border border-[#071B2B]/30 text-[11px] sm:text-xs md:text-sm text-[#071B2B] placeholder:text-[#071B2B]/45 focus:outline-none focus:border-[#FF5A22] transition"
                         />
                     </div>
 
                     <div>
-                        <label className="block text-xs font-semibold text-[#071B2B] mb-1.5">
+                        <label className="block text-[11px] sm:text-xs font-semibold text-[#071B2B] mb-1">
                             Pesan
                         </label>
                         <textarea
@@ -583,15 +591,15 @@ function Home() {
                                 setFormData({ ...formData, pesan: e.target.value })
                             }
                             placeholder="Masukkan Pesan"
-                            className="w-full px-4 py-2.5 rounded-xl bg-white border border-[#071B2B]/30 text-xs sm:text-sm text-[#071B2B] placeholder:text-[#071B2B]/45 focus:outline-none focus:border-[#FF5A22] transition"
+                            className="w-full px-3.5 sm:px-4 py-2 rounded-xl bg-white border border-[#071B2B]/30 text-[11px] sm:text-xs md:text-sm text-[#071B2B] placeholder:text-[#071B2B]/45 focus:outline-none focus:border-[#FF5A22] transition"
                         />
                     </div>
 
-                    <div className="pt-1">
+                    <div className="pt-0.5">
                         <button
                             type="submit"
                             disabled={loading}
-                            className="w-full sm:w-auto min-w-[160px] py-2 px-6 rounded-full bg-[#071B2B] hover:bg-[#FF5A22] disabled:opacity-50 text-white font-semibold text-xs sm:text-sm transition duration-200 shadow-sm cursor-pointer"
+                            className="w-full sm:w-auto min-w-[140px] sm:min-w-[160px] py-1.5 sm:py-2 px-5 sm:px-6 rounded-full bg-[#071B2B] hover:bg-[#FF5A22] disabled:opacity-50 text-white font-semibold text-[11px] sm:text-xs md:text-sm transition duration-200 shadow-sm cursor-pointer"
                         >
                             {loading ? 'Mengirim...' : 'Kirim Pesan'}
                         </button>
@@ -599,7 +607,7 @@ function Home() {
 
                     {statusPesan.teks && (
                         <div
-                            className={`p-3 rounded-xl text-xs font-medium text-white ${statusPesan.tipe === 'sukses' ? 'bg-[#071B2B]' : 'bg-red-600'
+                            className={`p-2.5 sm:p-3 rounded-xl text-[11px] sm:text-xs font-medium text-white ${statusPesan.tipe === 'sukses' ? 'bg-[#071B2B]' : 'bg-red-600'
                                 }`}
                         >
                             {statusPesan.teks}
