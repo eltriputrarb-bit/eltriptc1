@@ -20,13 +20,13 @@ function Home() {
     const dataProject = {
         1: [
             {
-                nama: 'portofolio',
+                nama: 'website portofolio',
                 deskripsi: 'Deskripsikan / jelaskan website kamu tentang apa',
                 screenshot: ss1,
                 link: 'https://portofolio-xcode.vercel.app/',
             },
             {
-                nama: 'ptc indonesia2',
+                nama: 'website ptc indonesia2',
                 deskripsi: 'Deskripsikan / jelaskan website kamu tentang apa',
                 screenshot: ss2,
                 link: 'https://ptcindonesia2.vercel.app',
@@ -38,7 +38,7 @@ function Home() {
                 link: 'https://h2iman.vercel.app',
             },
             {
-                nama: 'Tokoku',
+                nama: 'website Tokoku online',
                 deskripsi: 'Deskripsikan / jelaskan website kamu tentang apa',
                 screenshot: ss4,
                 link: 'https://tokoku-alpha.vercel.app',
@@ -46,25 +46,25 @@ function Home() {
         ],
         2: [
             {
-                nama: 'github',
+                nama: 'website github',
                 deskripsi: 'Deskripsikan / jelaskan website kamu tentang apa',
                 screenshot: ss5,
                 link: 'https://github.com/eltriputrarb-bit',
             },
             {
-                nama: 'lk21 film',
+                nama: 'website lk21 film',
                 deskripsi: 'Deskripsikan / jelaskan website kamu tentang apa',
                 screenshot: ss6,
                 link: 'https://tv12.lk21official.cc/',
             },
             {
-                nama: 'eltriputrarb',
+                nama: 'website eltriputrarb',
                 deskripsi: 'Deskripsikan / jelaskan website kamu tentang apa',
                 screenshot: ss7,
                 link: 'https://eltriputrarb.vercel.app/',
             },
             {
-                nama: 'eltriputra2',
+                nama: 'website eltriputra2',
                 deskripsi: 'Deskripsikan / jelaskan website kamu tentang apa',
                 screenshot: ss8,
                 link: 'https://eltriputra4.vercel.app/',
@@ -72,7 +72,7 @@ function Home() {
         ],
         3: [
             {
-                nama: 'sudut',
+                nama: 'website sudut',
                 deskripsi: 'Deskripsikan / jelaskan website kamu tentang apa',
                 screenshot: ss9,
                 link: 'https://ptcindonesia.vercel.app/ ',
