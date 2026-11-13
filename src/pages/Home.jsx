@@ -1,10 +1,15 @@
 import { useState } from 'react'
 import schoolLogo from '../assets/school.jpg'
 import fotoProfil from '../assets/foto.jpg'
-import ss1 from '../assets/ss.jpg'
+import ss1 from '../assets/ss1.jpg'
 import ss2 from '../assets/ssP.jpg'
 import ss3 from '../assets/ss3.jpg'
 import ss4 from '../assets/ss4.jpg'
+import ss5 from '../assets/github.jpg'
+import ss6 from '../assets/lk21.jpg'
+import ss7 from '../assets/ss7.jpg'
+import ss8 from '../assets/ss8.jpg'
+import ss9 from '../assets/ss9.jpg'
 
 function Home() {
     const [halamanAktif, setHalamanAktif] = useState(1)
@@ -15,10 +20,10 @@ function Home() {
     const dataProject = {
         1: [
             {
-                nama: 'PTC INDONESIA',
+                nama: 'portofolio',
                 deskripsi: 'Deskripsikan / jelaskan website kamu tentang apa',
                 screenshot: ss1,
-                link: 'https://www.ptcindonesia.com',
+                link: 'https://portofolio-xcode.vercel.app/',
             },
             {
                 nama: 'ptc indonesia2',
@@ -27,7 +32,7 @@ function Home() {
                 link: 'https://ptcindonesia2.vercel.app',
             },
             {
-                nama: 'h2iman',
+                nama: 'website film ',
                 deskripsi: 'Deskripsikan / jelaskan website kamu tentang apa',
                 screenshot: ss3,
                 link: 'https://h2iman.vercel.app',
@@ -41,55 +46,38 @@ function Home() {
         ],
         2: [
             {
-                nama: 'Website Project 5',
+                nama: 'github',
                 deskripsi: 'Deskripsikan / jelaskan website kamu tentang apa',
-                screenshot: '',
-                link: '#',
+                screenshot: ss5,
+                link: 'https://github.com/eltriputrarb-bit',
             },
             {
-                nama: 'Website Project 6',
+                nama: 'lk21 film',
                 deskripsi: 'Deskripsikan / jelaskan website kamu tentang apa',
-                screenshot: '',
-                link: '#',
+                screenshot: ss6,
+                link: 'https://tv12.lk21official.cc/',
             },
             {
-                nama: 'Website Project 7',
+                nama: 'eltriputrarb',
                 deskripsi: 'Deskripsikan / jelaskan website kamu tentang apa',
-                screenshot: '',
-                link: '#',
+                screenshot: ss7,
+                link: 'https://eltriputrarb.vercel.app/',
             },
             {
-                nama: 'Website Project 8',
+                nama: 'eltriputra2',
                 deskripsi: 'Deskripsikan / jelaskan website kamu tentang apa',
-                screenshot: '',
-                link: '#',
+                screenshot: ss8,
+                link: 'https://eltriputra4.vercel.app/',
             },
         ],
         3: [
             {
-                nama: 'Website Project 9',
+                nama: 'sudut',
                 deskripsi: 'Deskripsikan / jelaskan website kamu tentang apa',
-                screenshot: '',
-                link: '#',
+                screenshot: ss9,
+                link: 'https://ptcindonesia.vercel.app/ ',
             },
-            {
-                nama: 'Website Project 10',
-                deskripsi: 'Deskripsikan / jelaskan website kamu tentang apa',
-                screenshot: '',
-                link: '#',
-            },
-            {
-                nama: 'Website Project 11',
-                deskripsi: 'Deskripsikan / jelaskan website kamu tentang apa',
-                screenshot: '',
-                link: '#',
-            },
-            {
-                nama: 'Website Project 12',
-                deskripsi: 'Deskripsikan / jelaskan website kamu tentang apa',
-                screenshot: '',
-                link: '#',
-            },
+
         ],
     }
 
@@ -295,8 +283,8 @@ function Home() {
                             key={nomor}
                             onClick={() => setHalamanAktif(nomor)}
                             className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full border font-semibold text-[11px] sm:text-xs flex items-center justify-center transition cursor-pointer ${halamanAktif === nomor
-                                    ? 'bg-[#071B2B] text-white border-[#071B2B]'
-                                    : 'bg-[#F3F6F4] text-[#071B2B] border-[#071B2B]/45 hover:border-[#071B2B]'
+                                ? 'bg-[#071B2B] text-white border-[#071B2B]'
+                                : 'bg-[#F3F6F4] text-[#071B2B] border-[#071B2B]/45 hover:border-[#071B2B]'
                                 }`}
                         >
                             {nomor}

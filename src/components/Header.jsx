@@ -5,7 +5,7 @@ function Header() {
                 href="/#profil"
                 className="text-sm sm:text-base md:text-lg font-bold tracking-tight"
             >
-                PTCINDONESIA
+                ELTRI PUTRA
             </a>
 
             <div className="flex flex-wrap items-center gap-2.5 sm:gap-4 md:gap-6 text-[11px] sm:text-xs md:text-sm">
