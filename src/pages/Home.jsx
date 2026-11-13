@@ -20,83 +20,91 @@ function Home() {
     const dataProject = {
         1: [
             {
-                nama: 'website portofolio',
-                deskripsi: 'Deskripsikan / jelaskan website kamu tentang apa',
+                nama: 'Website Portofolio',
+                deskripsi:
+                    'Website portofolio pribadi yang menampilkan profil singkat, perjalanan belajar, galeri foto, serta kumpulan karya web yang pernah dibuat.',
                 screenshot: ss1,
                 link: 'https://portofolio-xcode.vercel.app/',
             },
             {
-                nama: 'website ptc indonesia2',
-                deskripsi: 'Deskripsikan / jelaskan website kamu tentang apa',
+                nama: 'Website PTC Indonesia 2',
+                deskripsi:
+                    'Website informasi lembaga kursus komputer PTC Indonesia yang memuat daftar program pelatihan, jadwal belajar, dan informasi pendaftaran.',
                 screenshot: ss2,
                 link: 'https://ptcindonesia2.vercel.app',
             },
             {
-                nama: 'website film ',
-                deskripsi: 'Deskripsikan / jelaskan website kamu tentang apa',
+                nama: 'Website Film',
+                deskripsi:
+                    'Website katalog film yang menyajikan informasi data film seperti sinopsis, tahun rilis, kategori genre, rating, serta tautan trailer resmi.',
                 screenshot: ss3,
                 link: 'https://h2iman.vercel.app',
             },
             {
-                nama: 'website Tokoku online',
-                deskripsi: 'Deskripsikan / jelaskan website kamu tentang apa',
+                nama: 'Website Tokoku Online',
+                deskripsi:
+                    'Website toko online (e-commerce) yang dilengkapi tampilan katalog produk, halaman detail barang, informasi harga, dan fitur keranjang belanja.',
                 screenshot: ss4,
                 link: 'https://tokoku-alpha.vercel.app',
             },
         ],
         2: [
             {
-                nama: 'website github',
-                deskripsi: 'Deskripsikan / jelaskan website kamu tentang apa',
+                nama: 'Profil & Repository GitHub',
+                deskripsi:
+                    'Akun GitHub tempat menyimpan berbagai kode sumber proyek web (React, Vite, Node.js) serta catatan latihan pemrograman.',
                 screenshot: ss5,
                 link: 'https://github.com/eltriputrarb-bit',
             },
             {
-                nama: 'website lk21 film',
-                deskripsi: 'Deskripsikan / jelaskan website kamu tentang apa',
+                nama: 'Website LK21 Film',
+                deskripsi:
+                    'Website daftar tontonan dan katalog film yang berisi pengelompokan genre, info rilis terbaru, serta halaman detail setiap film.',
                 screenshot: ss6,
                 link: 'https://tv12.lk21official.cc/',
             },
             {
-                nama: 'website eltriputrarb',
-                deskripsi: 'Deskripsikan / jelaskan website kamu tentang apa',
+                nama: 'Website Eltriputrarb',
+                deskripsi:
+                    'Website personal yang berisi profil pengembang, tautan proyek aktif, dan eksperimen desain antarmuka web responsif.',
                 screenshot: ss7,
                 link: 'https://eltriputrarb.vercel.app/',
             },
             {
-                nama: 'website eltriputra2',
-                deskripsi: 'Deskripsikan / jelaskan website kamu tentang apa',
+                nama: 'Website Eltriputra 2',
+                deskripsi:
+                    'Website latihan pengembangan front-end modern dengan fokus pada tata letak komponen yang bersih dan ringan di perangkat mobile',
                 screenshot: ss8,
                 link: 'https://eltriputra4.vercel.app/',
             },
         ],
         3: [
             {
-                nama: 'website sudut',
-                deskripsi: 'Deskripsikan / jelaskan website kamu tentang apa',
+                nama: 'Website Sudut',
+                deskripsi:
+                    'Website profil dan pusat informasi pelatihan dengan navigasi ringkas untuk calon peserta kursus.',
                 screenshot: ss9,
-                link: 'https://ptcindonesia.vercel.app/ ',
+                link: 'https://ptcindonesia.vercel.app/',
             },
-
         ],
     }
 
     const riwayatPendidikan = [
         {
             nama: 'SMK',
-            tahun: 'Tahun',
-            status: 'Lulus / Belum',
+            tahun: '2023 - 2026',
+            status: 'Lulus / belum',
             logo: '',
         },
         {
-            nama: 'SLB/SMP Katolik Rajawali / Les / Kursus',
-            tahun: 'Tahun',
-            status: 'Lulus / Belum',
+            nama: 'SLB / SMP Katolik Rajawali',
+            tahun: '2020 - 2023',
+            status: 'Lulus / belum',
             logo: schoolLogo,
         },
         {
-            nama: 'SLB/SD Katolik Rajawali / Les / Kursus',
-            tahun: 'Tahun',
+            nama: 'SLB / SD Katolik Rajawali',
+            tahun: '2014 - 2020',
             status: 'Lulus / Belum',
             logo: schoolLogo,
         },
@@ -165,12 +173,15 @@ function Home() {
                         Eltri Putra Rombebua
                     </h1>
                     <p className="text-[11px] sm:text-xs md:text-sm font-medium text-[#071B2B]/75 mt-0.5">
-                        Web Developer / Siswa
+                        Front-End &amp; Full-Stack Web Developer
                     </p>
 
                     <p className="mt-3 sm:mt-4 text-[11px] sm:text-xs md:text-sm text-[#071B2B]/85 leading-relaxed max-w-lg">
-                        [Deskripsikan diri kamu.... misalkan “halo saya Eltri, hobby
-                        saya... sekolah dimana.... dan lain - lain]
+                        Halo, saya Eltri Putra Rombebua. Saya lulusan sekolah menengah yang
+                        saat ini mendalami pemrograman web Hobi saya adalah
+                        coding, fotografi, dan membangun website interaktif menggunakan React,
+                        Node.js, dan MongoDB, dengan cita-cita menjadi Full-Stack Web
+                        Developer profesional.
                     </p>
 
                     <div className="mt-4 sm:mt-6 w-full max-w-[175px] sm:max-w-[210px]">
